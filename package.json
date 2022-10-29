@@ -1,0 +1,16 @@
+{
+  "name": "porfolio-nodejs",
+  "version": "1.0.0",
+  "description": "This is week 5 zuri task",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "Victor Oderinde",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

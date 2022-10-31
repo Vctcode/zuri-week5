@@ -6,7 +6,7 @@ const server = http.createServer((request, response) => {
   let filePath = path.join(
     __dirname,
     "public",
-    request.url === "/" ? "home.html" : request.url
+    request.url === "/" || request.url == "/home"  ? "home.html" : request.url
   );
   let contentType = getContentType(filePath);
   let emptyPage = path.join(__dirname, "public", "404.html");
@@ -14,7 +14,7 @@ const server = http.createServer((request, response) => {
     if (err) {
       if (err.code === "ENOENT") {
         fs.readFile(emptyPage, "utf8", (err, content) => {
-        //   response.writeHead(200, { 'Content-Type': contentType });
+          response.writeHead(200, { 'Content-Type': emptyPage });
           response.end(content)
         });
       } else {
